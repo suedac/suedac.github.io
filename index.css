@@ -1,0 +1,14 @@
+body{
+    color: #231F20;
+    background-color: #EFE6DF;
+  }
+  
+  path {
+    stroke-dasharray: 7150;
+    stroke-dashoffset: 7150;
+  }
+  
+  svg{
+    width: 90vw;
+    margin: 5vw 0 15vw 5vw;
+ }

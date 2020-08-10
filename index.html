@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>sudo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+  <style>
+    body {
+      font: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 2.0;
+      color: #f5f6f7;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      margin: -8px;
+    }
+
+    .back{
+      background-color: lightgray;
+      opacity: 20;
+      padding: 5em;
+      margin: 5em;
+      border-radius: 1em;
+      color: black;
+    }
+
+    path {
+      stroke-dasharray: 7150;
+      stroke-dashoffset: 7150;
+    }
+
+    svg {
+      width: 90vw;
+      margin: 5vw 0 15vw 5vw;
+    }
+
+
+    p {
+      font-size: 16px;
+    }
+
+    .margin {
+      margin-bottom: 45px;
+    }
+
+    .efect {
+      margin-top: 14rem;
+      height: 0;
+      overflow-y: visible;
+      opacity: .35; 
+    }
+
+    .bg-1 {
+      color: #231F20;
+
+    }
+
+    .bg-2 {
+      color: #231F20;
+    }
+
+    .bg-3 {
+      color: #555555;
+    }
+
+    .bg-4 {
+      color: #231F20;
+    }
+
+    .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .navbar {
+
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+      opacity: 90%;
+      border-bottom-left-radius: 3rem;
+      border-bottom-right-radius: 3rem;
+
+    }
+
+    .navbar-nav li a:hover {
+      color: #f5f6f7 !important;
+    }
+
+    .affix {
+      top: 0;
+      width: 100%;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+    }
+
+    .affix-top {
+      position: static;
+      top: -35px;
+    }
+
+    .affix.container-fluid {
+      padding-top: 70px;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .typing-demo {
+      width: 22ch;
+      animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      font-family: monospace;
+      font-size: 2em;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+
+    .frame {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px;
+      width: 1000px;
+      position: relative;
+      box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+      border-radius: 10px;
+    }
+
+    .btn {
+      height: 35px;
+      width: 35px;
+      border-radius: 3px;
+      background: #e0e5ec;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
+      box-shadow:
+        -7px -7px 20px 0px #0001,
+        -4px -4px 5px 0px #0002,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9,
+        inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+      font-size: 16px;
+      color: rgba(42, 52, 84, 1);
+      text-decoration: none;
+    }
+
+    .btn:active {
+      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-spy="affix" data-offset-top="197">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="row">
+          <div class="col-4">
+            <a class="navbar-brand" href="#">Me</a>
+          </div>
+          <div class="col-4">
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#bg-1">WHO</a></li>
+                <li><a href="#bg-2">WHAT</a></li>
+                <li><a href="#bg-3">WHERE</a></li>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="wrapper">
+              <div class="typing-demo">HELLO WORLD ! </div>
+            </div>
+          </div>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="efect">
+    <svg viewBox="0 0 1400 3900" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"
+      stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5">
+      <path
+        d="M1225 25v550c0 50-50 100-100 100h-100c-50 0-100 50-100 100v400c0 50-50 100-100 100H325c-50 0-100 50-100 100v300c0 50 50 100 100 100h350c37.165 0 100 50 100 100v100c0 50-50 100-100 100H475c-50 0-100 50-100 100v100c0 50-50 100-100 100H175c-50 0-100 50-100 100v600c0 50 50 100 100 100h50c50 0 100 50 100 100v600"
+        fill="none" stroke="#ffc233" stroke-width="50" />
+      <path
+        d="M1175 25v450c0 50-50 100-100 100H425c-50 0-100 50-100 100v400c0 50 50 100 100 100h500c50 0 100 50 100 100v100c0 44.415 50 100 100 100h100c52.316 0 100 50 100 100v200c0 50-50 100-100 100h-200c-50 0-100 50-100 100v200c0 50-50 100-100 100H525c-50 0-100 50-100 100v250c0 50 50 100 100 100h200c57.267 0 100 50 100 100v700c0 50-50 100-100 100H375c-50 0-100 50-100 100v150"
+        fill="none" stroke="#f79649" stroke-width="50" />
+      <path
+        d="M1125 25v350c0 50-50 100-100 100H925c-50 0-100 50-100 100v200c0 50 50 100 100 100h300c50 0 100 50 100 100v500c0 50-50 100-100 100H225c-50 0-100 50-100 100v150c0 50 50 100 100 100h350c50 0 100 50 100 100v450c0 50 50 100 100 100h200c50 0 100 50 100 100v500c0 50-50 100-100 100H325c-50 0-100 50-100 100v500"
+        fill="none" stroke="#f36652" stroke-width="50" />
+      <path
+        d="M1075 25v250c0 50-50 100-100 100H275c-50 0-100 50-100 100v400c0 50 50 100 100 100h400c50 0 100 50 100 100v600c0 50 50 100 100 100h100c50 0 100 50 100 100 0 5.947 3.883 63.273 3.883 150 0 50 46.117 100 96.117 100h100c50 0 100 50 100 100v700c0 50-50 100-100 100H275c-50 0-100 50-100 100v750"
+        fill="none" stroke="#a17398" stroke-width="50" />
+      <path
+        d="M1025 25v150c0 50-50 100-100 100H725c-50 0-100 50-100 100v300c0 50-50 100-100 100H125c-50 0-100 50-100 100v500c0 50 50 100 100 100h300c50 0 100 50 100 100v800c0 66.541 50 100 100 100h500c50 0 100 50 100 100v200c0 50-50 100-100 100H625c-50 0-100 50-100 100v400c0 50-50 100-100 100H225c-50 0-100 50-100 100v300"
+        fill="none" stroke="#3d88b0" stroke-width="50" /></svg>
+  </div>
+
+  <!-- First Container -->
+  <div id="bg-1" class="container-fluid bg-1 text-center">
+    <h3 class="margin">Who Am I?</h3>
+    <div>
+      <img src="sudo.jpeg" class="img-responsive img-circle margin" style="display:inline" alt="me" width="350"
+        height="200">
+      <h3>I'm a developer.</h3>
+
+
+    </div>
+
+  </div>
+
+  <!-- Second Container -->
+  <div id="bg-2" class="container-fluid bg-2 text-center">
+    <h3 class="margin">What Am I?</h3>
+  </div> 
+  <div class="back">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></div>
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+      <div class="container">
+
+        <div class="frame">
+          <a href="https://www.facebook.com/sueda.cigdem.7" class="btn">
+            <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
+          </a>
+          <a href="https://twitter.com/suedaptupdate" class="btn">
+            <i class="fab fa-twitter" style="color: #00acee;"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/zehra-sueda-ç-aa449a173" class="btn">
+            <i class="fab fa-linkedin-in" style="color:#0e76a8;"></i>
+          </a>
+
+          <a href="mailto:zehrasuedacigdem@gmail.com " class="btn">
+            <i class="far fa-envelope"></i>
+          </a>
+        </div>
+
+    </footer>
+    <script src="like_button.js"></script>
+</body>
+
+</html>
